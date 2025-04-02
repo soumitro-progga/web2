@@ -1,0 +1,516 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.chord-body {
+  background-color: rgb(237, 249, 255);
+  width: 92%;
+  padding: 20px 0 10px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: auto;
+}
+.chord-body .chord {
+  max-width: 320px;
+  min-height: 340px;
+  padding: 15px;
+}
+.chord .draw-chord {
+  width: 220px;
+  position: relative;
+}
+
+.draw-chord .chord-hr {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-height: 650px;
+}
+.chord-hr .hr {
+  width: 100%;
+  padding: 1px;
+  background-color: rgb(0, 0, 0);
+}
+.chord-vr {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  top: 0;
+}
+.chord-vr .vr {
+  height: 626px;
+  background-color: black;
+  padding: 1px;
+}
+.draw-chord .frets-name {
+  position: absolute;
+  top: 18px;
+  left: -40px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+.frets-name div {
+  font-weight: bold;
+  font-size: 20px;
+  user-select: none;
+}
+.chord .strings-name {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0 20px;
+}
+.strings-name div {
+  user-select: none;
+}
+.strings-name div {
+  user-select: none;
+}
+.chord-name h3 {
+  border-bottom: 2px solid black;
+}
+.chord-name h3 span:nth-child(3) {
+  color: rgb(4, 0, 255);
+}
+.chord-name h3 span:nth-child(2) {
+  font-weight: normal;
+}
+.notes-by-frets {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: red;
+}
+.notes-by-frets > div {
+  position: absolute;
+  background-color: rgb(70, 69, 69);
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(255, 255, 255);
+  z-index: 999;
+  user-select: none;
+  font-size: 20px;
+}
+
+.E2 {
+  left: -6.3%;
+  top: -40px;
+}
+.A2 {
+  left: 13.5%;
+  top: -40px;
+}
+.D3 {
+  left: 33.2%;
+  top: -40px;
+}
+.G3 {
+  left: 53.1%;
+  top: -40px;
+}
+.B3 {
+  left: 73%;
+  top: -40px;
+}
+.E4 {
+  left: 92.6%;
+  top: -40px;
+}
+.muted {
+  top: -303px !important;
+  background: transparent !important;
+  color: red !important;
+  font-size: 40px !important;
+}
+.first-fret {
+  top: -614px !important;
+}
+.second-fret {
+  top: -561px !important;
+}
+.third-fret {
+  top: -509px !important;
+}
+.fourth-fret {
+  top: -457px !important;
+}
+.fifth-fret {
+  top: -405px !important;
+}
+.sixth-fret {
+  top: -354px !important;
+}
+.seventh-fret {
+  top: -302px !important;
+}
+.eightth-fret {
+  top: -250px !important;
+}
+.nineth-fret {
+  top: -198px !important;
+}
+.tenth-fret {
+  top: -146px !important;
+}
+.eleventh-fret {
+  top: -94px !important;
+}
+.twoalfth-fret {
+  top: -42px !important;
+}
+.first-fret-NOTE {
+  top: -614px !important;
+  color: white !important;
+  font-weight: bold;
+  background-color: rgb(103 49 224) !important;
+}
+.second-fret-NOTE {
+  top: -561px !important;
+  color: white !important;
+  font-weight: bold;
+  background-color: rgb(103 49 224) !important;
+}
+.third-fret-NOTE {
+  top: -509px !important;
+  color: white !important;
+  font-weight: bold;
+  background-color: rgb(103 49 224) !important;
+}
+.fourth-fret-NOTE {
+  top: -457px !important;
+  color: white !important;
+  font-weight: bold;
+  background-color: rgb(103 49 224) !important;
+}
+.fifth-fret-NOTE {
+  top: -405px !important;
+  color: white !important;
+  font-weight: bold;
+  background-color: rgb(103 49 224) !important;
+}
+.sixth-fret-NOTE {
+  top: -354px !important;
+  color: white !important;
+  font-weight: bold;
+  background-color: rgb(103 49 224) !important;
+}
+.seventh-fret-NOTE {
+  top: -302px !important;
+  color: white !important;
+  font-weight: bold;
+  background-color: rgb(103 49 224) !important;
+}
+.eightth-fret-NOTE {
+  top: -250px !important;
+  color: white !important;
+  font-weight: bold;
+  background-color: rgb(103 49 224) !important;
+}
+.nineth-fret-NOTE {
+  top: -198px !important;
+  color: white !important;
+  font-weight: bold;
+  background-color: rgb(103 49 224) !important;
+}
+.tenth-fret-NOTE {
+  top: -146px !important;
+  color: white !important;
+  font-weight: bold;
+  background-color: rgb(103 49 224) !important;
+}
+.eleventh-fret-NOTE {
+  top: -94px !important;
+  color: white !important;
+  font-weight: bold;
+  background-color: rgb(103 49 224) !important;
+}
+.twoalfth-fret-NOTE {
+  top: -42px !important;
+  color: white !important;
+  font-weight: bold;
+  background-color: rgb(103 49 224) !important;
+}
+
+.play-open {
+  display: none !important;
+}
+.control-buttons {
+  display: flex;
+  justify-content: space-evenly;
+  /* background: red; */
+  padding: 5px 0 0;
+}
+.buttonsActive {
+  font-size: 30px;
+  color: rgb(80, 76, 76);
+  cursor: pointer;
+  position: relative;
+}
+.buttonsDeactive {
+  color: rgb(155, 152, 152) !important;
+}
+.explore-section {
+  margin: 5px 0 0;
+  width: 100%;
+  padding: 10px;
+  background-color: rgb(237, 249, 255);
+  box-shadow: 0px 3px 10px black;
+  text-align: center;
+  overflow: hidden;
+}
+.explore-section h3 {
+  color: rgb(90, 96, 100);
+  position: relative;
+  left: -100%;
+  animation: exploreText 2s forwards ease-out;
+}
+@keyframes exploreText {
+  100% {
+    top: 0;
+    left: 0;
+  }
+}
+.notes-chord-type {
+  background-color: rgb(204, 215, 221);
+  width: 100%;
+  padding: 20px 0 10px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 5px 0 10px 0;
+}
+.note-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 49%;
+  position: relative;
+}
+
+.dropdown-notes,
+.drop-chordType {
+  position: fixed;
+  bottom: 15%;
+  width: 75vw;
+  max-width: 600px;
+  height: 0px;
+  overflow: auto;
+  left: 50%;
+  transform: translate(-50%, -0%);
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  gap: 1px;
+  background-color: rgb(237, 249, 255);
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px black;
+  transition: all 0.3s ease-out;
+}
+.dropdown-open {
+  padding: 10px 6px;
+  height: 50vh;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  gap: 3px;
+  bottom: 15%;
+  max-width: 600px;
+}
+.drop-chordType > div,
+.dropdown-notes > div {
+  background-image: linear-gradient(
+    120deg,
+    rgb(228, 255, 255),
+    rgb(149, 255, 220)
+  );
+  box-shadow: -2px 4px 20px rgb(117, 117, 117);
+  display: flex;
+  justify-content: center;
+  padding: 15px 0;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  color: rgb(76, 11, 255);
+  letter-spacing: 1px;
+  border-radius: 5px;
+  user-select: none;
+}
+.black {
+  background-color: black !important;
+  color: white !important;
+}
+.dropdown-notes > div span {
+  position: absolute;
+}
+.dropdown-notes div:hover,
+.drop-chordType div:hover {
+  background: aliceblue;
+  color: black;
+}
+.dropdown-title {
+  color: rgb(98, 0, 255);
+  /* text-shadow: 0 0 1px #000; */
+  font-size: 1rem;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+.dropdown-title span {
+  color: rgb(0, 81, 255);
+}
+.type-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 49%;
+}
+.chord-type .drop-chordType {
+  position: absolute;
+  background-color: red;
+  top: 0;
+}
+.downArr-icon {
+  display: inline-block;
+  background-image: linear-gradient(
+    120deg,
+    rgb(218, 255, 255),
+    rgb(178, 255, 229)
+  );
+  height: 40px;
+  width: 95%;
+  margin: 5px 0 0;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.3rem;
+  box-shadow: 0px 0px 10px rgb(141, 134, 134);
+}
+.downArr-icon > div {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0 5px;
+}
+.downArr-icon > div > p {
+  user-select: none;
+}
+.downArr-icon > div > p:last-child {
+  color: rgb(68, 0, 255);
+  font-weight: 600;
+  font-size: 1rem;
+}
+.noteIcon,
+.typeIcon {
+  transition: all 0.5s ease-in-out;
+}
+.note-type-active-icons {
+  transform: rotate(180deg);
+  color: rgb(156, 156, 156);
+  font-size: 1.6rem;
+}
+.close-button {
+  width: 0;
+  overflow: hidden;
+  position: fixed;
+  left: 50%;
+  bottom: 10%;
+  transform: translate(-50%, -50%) rotate(0) scale(0);
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+}
+.close-button > div {
+  width: 40px;
+  padding: 2px;
+  box-shadow: 0 0 1px black;
+  border-radius: 2px;
+  background-color: rgb(255, 0, 0);
+}
+.close-button > div:first-child {
+  position: absolute;
+  transform: rotate(135deg);
+}
+.close-button > div:last-child {
+  transform: rotate(225deg);
+}
+.close-button-active {
+  width: auto;
+  overflow: visible;
+  transform: translate(-50%, -50%) rotate(540deg) scale(1);
+  transition: all 0.5s ease-in-out;
+  z-index: 3000;
+}
+.close-button-active-for-notes {
+  width: auto;
+  overflow: visible;
+  transform: translate(-50%, -50%) rotate(540deg) scale(1);
+  transition: transform 1s ease-in-out;
+}
+.note-finger-buttons {
+  position: fixed;
+  bottom: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  background-color: rgb(231, 246, 253);
+  box-shadow: 0px 3px 10px black;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 0 5%;
+  padding: 10px 0;
+  min-height: 60px;
+  z-index: 2000;
+}
+.note-finger-buttons div {
+  width: 30%;
+  max-width: 30%;
+  background-color: rgb(194, 194, 194);
+  display: flex;
+  color: rgb(64, 75, 75);
+  align-items: center;
+  justify-content: center;
+  padding: 5px 0;
+  transition: all 0.5s;
+  border-radius: 5px;
+}
+.note-finger-buttons div:hover,
+.note-finger-buttons-active {
+  user-select: none;
+  background-color: rgb(250, 200, 200) !important;
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 0;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: rgb(30, 31, 32);
+  transition: all 0.5s ease-in-out;
+}
+#showNote {
+  color: rgb(132, 0, 255);
+}
+.chord-name h3 {
+  user-select: none;
+}
+.footer {
+  margin: 0 0 60px;
+}

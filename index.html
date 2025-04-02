@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learn Basic to Advanced Guitar Chords</title>
+  <script src="/icons/all.js"></script>
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="manifest" href="/manifest.json" />
+</head>
+
+<body>
+  <div id="install-popup" style="
+        display: block;
+        text-align: center;
+        min-width: 300px;
+        position: fixed;
+        z-index: 3000;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 50%);
+        background-image: linear-gradient(
+        120deg,
+        rgb(228, 255, 255),
+        rgb(149, 255, 220)
+       );
+            padding: 15px;
+        border-radius: 8px;
+      ">
+      <p>No App Store Needed !</p>
+      <p>Get our powerful web app with just one click. Faster speed, less storage, and more convenience !</p>
+    <button id="install-button">Install</button>
+    <button id="notNow-button">Not Now</button>
+  </div>
+
+  <p class="noteForGenerateChordByJson" style="display: none">C</p>
+  <p class="typeForGenerateChordByJson" style="display: none">maj</p>
+  <div class="note-finger-buttons">
+    <div id="notes">
+      <p><i class="fab fa-itunes-note"></i> Notes</p>
+    </div>
+    <div id="fingers">
+      <p><i class="fas fa-hand-paper"></i> Fingers</p>
+    </div>
+  </div>
+  <div class="close-button">
+    <div></div>
+    <div></div>
+  </div>
+  <div class="dropdown-notes" id="dropNotes">
+    <div class="clicked-type-note" onclick="selectedNote('C')">
+      <p>C</p>
+    </div>
+    <div onclick="selectedNote('C#')">
+      <div>C<span>#</span></div>
+    </div>
+    <div onclick="selectedNote('D')">
+      <p>D</p>
+    </div>
+    <div onclick="selectedNote('D#')">
+      <div>D<span>#</span></div>
+    </div>
+    <div onclick="selectedNote('E')">
+      <p>E</p>
+    </div>
+    <div onclick="selectedNote('F')">
+      <p>F</p>
+    </div>
+    <div onclick="selectedNote('F#')">
+      <div>F<span>#</span></div>
+    </div>
+    <div onclick="selectedNote('G')">
+      <p>G</p>
+    </div>
+    <div onclick="selectedNote('G#')">
+      <div>G<span>#</span></div>
+    </div>
+    <div onclick="selectedNote('A')">
+      <p>A</p>
+    </div>
+    <div onclick="selectedNote('A#')">
+      <div>A<span>#</span></div>
+    </div>
+    <div onclick="selectedNote('B')">
+      <p>B</p>
+    </div>
+  </div>
+
+  <div class="drop-chordType" id="dropTypes">
+    <div class="clicked-type-note">
+      <p>maj</p>
+    </div>
+    <div>
+      <p>m</p>
+    </div>
+    <div>
+      <p>dim</p>
+    </div>
+    <div>
+      <p>aug</p>
+    </div>
+    <div>
+      <p>sus2</p>
+    </div>
+    <div>
+      <p>sus4</p>
+    </div>
+    <div>
+      <p>majb5</p>
+    </div>
+    <div>
+      <p>m #5</p>
+    </div>
+    <div>
+      <p>m bb5</p>
+    </div>
+    <div>
+      <p>sus4#5</p>
+    </div>
+    <div>
+      <p>sus2b5</p>
+    </div>
+    <div>
+      <p>sus2#5</p>
+    </div>
+    <div>
+      <p>7</p>
+    </div>
+    <div>
+      <p>m7</p>
+    </div>
+    <div>
+      <p>maj7</p>
+    </div>
+    <div>
+      <p>m(maj7)</p>
+    </div>
+    <div>
+      <p>dim7</p>
+    </div>
+    <div>
+      <p>aug7</p>
+    </div>
+    <div>
+      <p>aug(maj7)</p>
+    </div>
+    <div>
+      <p>7b5</p>
+    </div>
+    <div>
+      <p>maj7b5</p>
+    </div>
+    <div>
+      <p>m7b5</p>
+    </div>
+    <div>
+      <p>m7#5</p>
+    </div>
+    <div>
+      <p>7b9</p>
+    </div>
+    <div>
+      <p>6</p>
+    </div>
+    <div>
+      <p>m6</p>
+    </div>
+    <div>
+      <p>6b5</p>
+    </div>
+    <div>
+      <p>6/9</p>
+    </div>
+    <div>
+      <p>m6/9</p>
+    </div>
+    <div>
+      <p>9</p>
+    </div>
+    <div>
+      <p>m9</p>
+    </div>
+    <div>
+      <p>maj9</p>
+    </div>
+    <div>
+      <p>m(maj9)</p>
+    </div>
+    <div>
+      <p>9b5</p>
+    </div>
+    <div>
+      <p>aug9</p>
+    </div>
+    <div>
+      <p>9sus4</p>
+    </div>
+    <div>
+      <p>7#9</p>
+    </div>
+    <div>
+      <p>7#9b5</p>
+    </div>
+    <div>
+      <p>aug(maj9)</p>
+    </div>
+    <div>
+      <p>11</p>
+    </div>
+    <div>
+      <p>m11</p>
+    </div>
+    <div>
+      <p>maj11</p>
+    </div>
+    <div>
+      <p>m(maj11)</p>
+    </div>
+    <div>
+      <p>maj#11</p>
+    </div>
+    <div>
+      <p>13</p>
+    </div>
+    <div>
+      <p>m13</p>
+    </div>
+    <div>
+      <p>maj13</p>
+    </div>
+    <div>
+      <p>m(maj13)</p>
+    </div>
+    <div>
+      <p>7sus2</p>
+    </div>
+    <div>
+      <p>maj7sus2</p>
+    </div>
+    <div>
+      <p>7sus4</p>
+    </div>
+    <div>
+      <p>maj7sus4</p>
+    </div>
+    <div>
+      <p>7sus2#5</p>
+    </div>
+    <div>
+      <p>7sus4#5</p>
+    </div>
+    <div>
+      <p>maj7sus4#5</p>
+    </div>
+    <div>
+      <p>sus2sus4</p>
+    </div>
+    <div>
+      <p>7sus2sus4</p>
+    </div>
+    <div>
+      <p>maj7sus2sus4</p>
+    </div>
+    <div>
+      <p>5</p>
+    </div>
+    <div>
+      <p>add9</p>
+    </div>
+  </div>
+  <header class="header">
+    <nav class="nav">
+      <ol>
+        <li><a href="/index.html">Hospana</a></li>
+        <li class="navlist-active"><a href="/index.html">Chords</a></li>
+        <li><a href="#">Scales</a></li>
+        <li><a href="#">Arpeggios</a></li>
+        <li><a href="#">Chord Progression</a></li>
+        <li><a href="#">Chakma Lyrics</a></li>
+      </ol>
+    </nav>
+  </header>
+  <main class="chords-main">
+    <section class="explore-section">
+      <h2>Learn Guitar Chords</h2>
+    </section>
+
+    <section class="notes-chord-type">
+      <div class="note-section">
+        <p class="dropdown-title">Note</p>
+        <div class="downArr-icon iconNote">
+          <div>
+            <p class="noteIcon"><i class="fas fa-caret-down"></i></p>
+            <p id="yourNoteIs">C</p>
+          </div>
+        </div>
+      </div>
+      <div class="type-section">
+        <p class="dropdown-title">Chord <span>Type</span></p>
+        <div class="downArr-icon iconType">
+          <div>
+            <p class="typeIcon"><i class="fas fa-caret-down"></i></p>
+            <p id="yourChordTypeIs">maj</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="chord-body">
+      <div class="chord-name">
+        <h3>
+          <span id="showNote">C </span> <span id="showChordType"> maj</span>
+        </h3>
+      </div>
+      <div class="chord">
+        <div class="strings-name">
+          <div>E</div>
+          <div>A</div>
+          <div>D</div>
+          <div>G</div>
+          <div>B</div>
+          <div>E</div>
+        </div>
+        <div class="draw-chord">
+          <div class="chord-hr">
+            <div class="hr"></div>
+            <div class="hr"></div>
+            <div class="hr"></div>
+            <div class="hr"></div>
+            <div class="hr"></div>
+          </div>
+          <div class="chord-vr">
+            <div class="vr"></div>
+            <div class="vr"></div>
+            <div class="vr"></div>
+            <div class="vr"></div>
+            <div class="vr"></div>
+            <div class="vr"></div>
+          </div>
+          <div class="frets-name">
+            <div id="firstF">1</div>
+            <div id="secondF">2</div>
+            <div id="thirdF">3</div>
+            <div id="fourthF">4</div>
+          </div>
+          <div class="notes-by-frets">
+            <div id="E2"></div>
+            <div id="A2"></div>
+            <div id="D3"></div>
+            <div id="G3"></div>
+            <div id="B3"></div>
+            <div id="E4"></div>
+          </div>
+        </div>
+        <div class="control-buttons">
+          <div>
+            <p id="previousButton" class="buttonsActive">
+              <i class="fas fa-caret-square-left"></i>
+            </p>
+          </div>
+          <div>
+            <p id="play" class="buttonsActive">
+              <i class="fas fa-play-circle"></i>
+            </p>
+            <p id="pause" class="buttonsActive" style="display: none">
+              <i class="fas fa-pause-circle"></i>
+            </p>
+          </div>
+          <div>
+            <p id="nextButton" class="buttonsActive">
+              <i class="fas fa-caret-square-right"></i>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <section class="info">
+      <h3>You want to learn guitar Basic to advanced chords, right ?</h3>
+      <p>
+        No worries, here you can find over your favourite chords. Here You can
+        have <b>5000+</b> chords to learn With the chord sound and finger
+        placement. <br />just follow and read the <b>How to use ?</b> section
+        if you do not know how this chord finder works.
+      </p>
+    </section>
+    <section class="howto">
+      <h2>How to use ?</h2>
+      <div class="play">
+        <p>
+          Click on the <i class="fas fa-play-circle"></i> (play) button to
+          listen the chord sound.
+        </p>
+      </div>
+      <div class="next">
+        <p>
+          Click on the <i class="fas fa-caret-square-right"></i> (next) button
+          to see the variant chords.
+        </p>
+      </div>
+      <div class="previous">
+        <p>
+          Click on the <i class="fas fa-caret-square-left"></i> (previous)
+          button to see the past chord. it will works after clicking on the
+          next button. Because by default it is selected the first chord and
+          do not have any previous chord.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><small>&copy;copright hospana-2025</small></footer>
+  <script src="/script.js"></script>
+</body>
+
+</html>

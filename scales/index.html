@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learn Basic to Advanced Guitar Chords</title>
+  <script src="/icons/all.js"></script>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <p class="noteByClick" style="display: none;">C</p>
+    <p class="typeByClick" style="display: none;">Major</p>
+    <div style="display: none;" class="note-finger-buttons">
+      <div id="notes"><p><i class="fab fa-itunes-note"></i> Notes</p></div>
+      <div id="fingers"><p><i class="fas fa-hand-paper"></i> Fingers</p></div>
+    </div>
+    <div class="close-button">
+      <div></div>
+      <div></div>
+    </div>
+    <div class="dropdown-notes" id="dropNotes"> 
+      <div onclick="selectedNote('C')"><p>C</p></div>
+      <div onclick="selectedNote('C#')"><div>C<span>#</span></div></div>
+      <div onclick="selectedNote('D')"><p>D</p></div>
+      <div onclick="selectedNote('D#')"><div>D<span>#</span></div></div>
+      <div onclick="selectedNote('E')"><p>E</p></div>
+      <div onclick="selectedNote('F')"><p>F</p></div>
+      <div onclick="selectedNote('F#')"><div>F<span>#</span></div></div>
+      <div onclick="selectedNote('G')"><p>G</p></div>
+      <div onclick="selectedNote('G#')"><div>G<span>#</span></div></div>
+      <div onclick="selectedNote('A')"><p>A</p></div>
+      <div onclick="selectedNote('A#')"><div>A<span>#</span></div></div>
+      <div onclick="selectedNote('B')"><p>B</p></div>
+  </div>
+
+    <div class="drop-chordType" id="dropTypes">
+      <div><p>Major</p></div>
+      <div><p>Minor</p></div>
+    </div>
+
+
+  <a href="/index.html"><header class="header">
+    <h1>hospana.com</h1>
+  </header></a>
+  <main class="chords-main">
+
+    <section class="explore-section">
+        <h3>Learn Your Favourite Guitar Scaless</h3>
+    </section>
+
+    <section class="notes-chord-type">
+      <div class="note-section">
+        <p class="dropdown-title">Note</p>
+        <div class="downArr-icon iconNote">
+          <div>
+            <p class="noteIcon"><i class="fas fa-caret-down"></i></p>
+            <p id="yourNoteIs">C</p>
+          </div>  
+        </div>
+      </div>
+      <div class="type-section">
+        <p class="dropdown-title">Scale <span>Type</span></p>
+        <div class="downArr-icon iconType">
+          <div> <p class="typeIcon"><i class="fas fa-caret-down"></i></p>
+            <p id="yourChordTypeIs">Major</p></div>
+        </div>
+      </div>
+    </section>
+
+
+    <div class="chord-body">
+
+      <div class="chord-name">
+        <h3><span id="showNote">C </span> <span id="showChordType"> Major </span> <span>Scale</span></h3>
+      </div>
+      <div class="chord">
+
+
+              <div class="strings-name">
+                <div>E</div>
+                <div>A</div>
+                <div>D</div>
+                <div>G</div>
+                <div>B</div>
+                <div>E</div>
+              </div>
+              <div class="draw-chord">
+                <div class="chord-hr">
+                  <div class="hr"></div>
+                  <div class="hr"></div>
+                  <div class="hr"></div>
+                  <div class="hr"></div>
+                  <div class="hr"></div>
+                  <div class="hr"></div>
+                  <div class="hr"></div>
+                  <div class="hr"></div>
+                  <div class="hr"></div>
+                  <div class="hr"></div>
+                  <div class="hr"></div>
+                  <div class="hr"></div>
+                  <div class="hr"></div>
+                </div>
+                <div class="chord-vr">
+                  <div class="vr"></div>
+                  <div class="vr"></div>
+                  <div class="vr"></div>
+                  <div class="vr"></div>
+                  <div class="vr"></div>
+                  <div class="vr"></div>
+                </div>
+                <div class="frets-name">
+                  <div >1</div>
+                  <div >2</div>
+                  <div >3</div>
+                  <div >4</div>
+                  <div >5</div>
+                  <div >6</div>
+                  <div >7</div>
+                  <div >8</div>
+                  <div >9</div>
+                  <div >10</div>
+                  <div >11</div>
+                  <div >12</div>
+                </div>
+                <div class="notes-by-frets">
+                  <!-- it is created by javascript fret all notes  -->
+                </div>
+              </div>
+             <div class="control-buttons">
+              <!-- <div>
+                <p id="previousButton" class="buttonsActive"><i class="
+                  fas fa-caret-square-left"></i></p>
+              </div> -->
+              <div>
+                <p id="play" class="buttonsActive"><i  class="
+                  fas fa-play-circle"></i></p>
+                <p id="pause" class="buttonsActive" style="display: none;"><i class="
+                  fas fa-pause-circle"></i></p>
+              </div>
+              <!-- <div>
+                <p id="nextButton" class="buttonsActive"><i class="fas fa-caret-square-right"></i></p>
+              </div> -->
+             </div>
+      </div>
+    </div>
+
+  </main>
+
+
+  
+  <footer class="footer">
+
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

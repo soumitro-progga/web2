@@ -1,0 +1,498 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+.chord-body{
+  /* background-color: rgb(237, 249, 255); */
+  width: 92%;
+  padding: 20px 0 10px;
+  border-radius: 20px;
+  /* box-shadow: 0px 0px 10px black; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: auto;
+}
+.chord-body .chord{
+  max-width:320px;
+  min-height: 340px;
+  padding: 15px;
+}
+.chord .draw-chord{
+  width:220px;
+  position: relative;
+}
+.draw-chord .chord-hr{
+  display: flex ;
+  flex-direction: column;
+  gap: 70px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.chord-hr .hr{
+  width: 100%;
+  padding: 1px;
+  background-color: rgb(0, 0, 0);
+}
+.chord-vr{
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  top: 0;
+}
+.chord-vr .vr{
+  height: 290px;
+  background-color: black;
+  padding: 1px;
+}
+.draw-chord .frets-name{
+  position: absolute;
+  top: 26px;
+  left: -35px;
+  display: flex;
+  flex-direction: column;
+  gap: 49px;
+}
+.frets-name div{
+  font-weight: bold;
+  font-size: 20px;
+  user-select: none;
+}
+.chord .strings-name{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0 20px;
+}
+.strings-name div{
+  user-select: none;
+}
+.strings-name div{
+  user-select: none;
+}
+.notes-by-frets{
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: red;
+}
+.notes-by-frets > div{
+  position: absolute;
+  background-color: rgb(70, 69, 69);
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(255, 255, 255);
+  z-index: 999;
+  user-select: none;
+  font-size: 20px;
+}
+
+.notes-by-frets > div:first-child{
+  left: -6.3%;
+  top: -40px;
+}
+.notes-by-frets > div:nth-child(2){
+  left: 13.5%;
+  top: -40px;
+}
+.notes-by-frets > div:nth-child(3){
+  left: 33.2%;
+  top: -40px;
+}
+.notes-by-frets > div:nth-child(4){
+  left: 53.1%;
+  top: -40px;
+}
+.notes-by-frets > div:nth-child(5){
+  left: 73%;
+  top: -40px;
+}
+.notes-by-frets > div:last-child{
+  left: 92.6%;
+  top: -40px;
+}
+.muted{
+  top: -303px !important;
+  background: transparent !important;
+  color: red !important;
+  font-size: 40px !important;
+}
+.first-fret{
+  top:-267px !important;
+}
+.second-fret{
+  top: -196px !important;
+}
+.third-fret{
+  top: -124px !important;
+}
+.fourth-fret{
+  top: -51px !important;
+}
+.first-fret-NOTE{
+  top:-267px !important;
+  color: white !important;
+  font-weight: bold;
+  background-color: rgb(103 49 224) !important;
+}
+.second-fret-NOTE{
+  top: -196px !important;
+  color: white !important;
+  font-weight: bold;
+  background-color: rgb(103 49 224) !important;
+}
+.third-fret-NOTE{
+  top: -124px !important;
+  color: white !important;
+  font-weight: bold;
+  background-color: rgb(103 49 224) !important;
+}
+.fourth-fret-NOTE{
+  top: -51px !important;
+  color: white !important;
+  font-weight: bold;
+  background-color: rgb(103 49 224) !important;
+}
+.play-open{
+  display: none !important;
+}
+.control-buttons{
+  display: flex;
+  justify-content: space-evenly;
+  /* background: red; */
+  padding: 5px 0 0;
+}
+.buttonsActive{
+  font-size: 30px;
+  color: rgb(80, 76, 76);
+  cursor: pointer;
+  position: relative;
+}
+.buttonsDeactive{
+  color: rgb(155, 152, 152) !important;
+}
+.header .nav ol{
+  display: flex;
+  background-color: rgb(255, 255, 255);
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.nav ol li{
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  padding: 0 10px;
+  transition: all 0.3s;
+}
+.nav ol li:hover{
+  background-color: rgb(207, 209, 211);
+}
+.navlist-active{
+  background-color: rgb(225, 229, 235);
+}
+.nav ol li a{
+  text-decoration: none;
+  color: #757373;
+}
+.nav ol li:first-child a{
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+.nav ol li:first-child{
+  width: 100vw;
+  user-select: none;
+  margin: 0 0 10px;
+  cursor: pointer;
+  font-size: 3.3rem;
+  font-family: cursive,sans-serif;
+  background-color: rgb(236, 236, 236);
+  border-bottom: 1px solid black;
+}
+
+.explore-section{
+  margin: 5px 0 0;
+  width: 100%;
+  padding: 10px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 0px 1.5px #757171;
+  text-align: center;
+  overflow: hidden;
+}
+.explore-section h2{
+  color: rgb(65, 65, 65);
+  position: relative;
+  left: -100%;
+  color: rgb(88, 88, 88);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  animation: exploreText 2s forwards ease-out;
+  font-weight: 500;
+}
+@keyframes exploreText{
+  100%{
+    top: 0;
+    left: 0;
+  }
+}
+.notes-chord-type{
+  width: 100%;
+  padding: 20px 0 10px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 5px 0 10px 0;
+}
+.note-section{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 49%;
+  position: relative;
+}
+
+ .dropdown-notes,.drop-chordType{
+  position: fixed;
+  bottom: 15%;
+  width: 75vw;
+  max-width: 600px;
+  height: 0px;
+  overflow: auto;
+  left:50%;
+  transform: translate(-50%,-0%);
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  gap: 1px;
+  background-color: rgb(237, 249, 255);
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px black;
+  transition: all 0.3s ease-out;
+}
+.dropdown-open{
+  padding: 10px 6px;
+  height: 50vh;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  gap: 3px;
+  bottom: 15%;
+  max-width: 600px;
+  background-color: rgba(255, 255, 255, 0.11);
+  backdrop-filter: blur(10px);
+}
+.drop-chordType > .color-of-type,
+.dropdown-notes > .color-of-note{
+  background-image: linear-gradient(120deg, rgba(241, 241, 241, 0.247), rgba(251, 255, 254, 0.144));
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 1px 1px rgb(2, 2, 2);
+  display: flex;
+  justify-content: center;
+  padding: 15px 0;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  color: rgb(76, 11, 255);
+  letter-spacing: 1px;
+  border-radius: 5px;
+  user-select: none;
+}
+.drop-chordType > div,
+.dropdown-notes > div{
+  background-image: linear-gradient(120deg, rgba(241, 241, 241, 0.247), rgba(251, 255, 254, 0.144));
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 1px 1px rgb(2, 2, 2);
+  display: flex;
+  justify-content: center;
+  padding: 15px 0;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  color: rgb(76, 11, 255);
+  letter-spacing: 1px;
+  border-radius: 5px;
+  user-select: none;
+}
+.black{
+  background-color: black !important;
+  color:  white !important;
+}
+.dropdown-notes > div span{
+  position: absolute;
+}
+@media only screen and (min-width:800px){
+  .dropdown-notes div:hover,.drop-chordType div:hover{
+    background: rgb(222, 240, 255);
+    color: black;
+  }
+}
+.clicked-type-note{
+  background: rgb(222, 240, 255);
+  color: black;
+}
+.dropdown-title{
+  color: rgb(98, 0, 255);
+  /* text-shadow: 0 0 1px #000; */
+  font-size: 1rem;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.dropdown-title span{
+  color: rgb(0, 81, 255);
+}
+.type-section{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 49%;
+}
+.chord-type .drop-chordType{
+  position: absolute;
+  background-color: red;
+  top: 0;
+}
+.downArr-icon{
+  display: inline-block;
+  height: 40px;
+  width: 90%;
+  max-width: 600px;
+  margin: 5px 0 0;
+  border-radius:12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.3rem;
+  box-shadow: 0px 0px 2px rgb(0, 0, 0);
+}
+.downArr-icon > div{
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0 5px;
+}
+.downArr-icon > div > p{
+  user-select: none;
+}
+.downArr-icon > div > p:last-child{
+  color: rgb(68, 0, 255);
+  font-weight: 600;
+  font-size: 1rem;
+}
+.noteIcon,.typeIcon{
+  transition:all 0.5s ease-in-out;
+}
+.note-type-active-icons{
+  transform: rotate(180deg); 
+  color: rgb(156, 156, 156);
+  font-size: 1.6rem;
+}
+.close-button{
+  width: 0;
+  overflow: hidden;
+  position: fixed;
+  left: 50%;
+  bottom: 10%;
+  transform: translate(-50%,-50%) rotate(0) scale(0);
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+}
+.close-button > div{
+  width: 40px;
+  padding: 2px;
+  box-shadow: 0 0 1px black;
+  border-radius: 2px;
+  background-color: rgb(255, 0, 0);
+}
+.close-button > div:first-child{
+  position: absolute;
+  transform: rotate(135deg);
+}
+.close-button > div:last-child{
+  transform: rotate(225deg);
+}
+.close-button-active{
+  width: auto;
+  overflow: visible;
+  transform: translate(-50%,-50%) rotate(540deg) scale(1);
+  transition: all 0.5s ease-in-out;
+  z-index: 3000;
+}
+.close-button-active-for-notes{
+  width: auto;
+  overflow: visible;
+  transform: translate(-50%,-50%) rotate(540deg) scale(1);
+  transition: transform 1s ease-in-out;
+}
+.note-finger-buttons{
+  position: fixed;
+  bottom: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  background-color: rgb(231, 246, 253);
+  box-shadow: 0px 3px 10px black;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 0 5%;
+  padding: 10px 0;
+  min-height: 60px;
+  z-index: 2000;
+}
+.note-finger-buttons div{
+  width: 30%;
+  max-width: 30%;
+  background-color: rgb(194, 194, 194) ;
+  display: flex;
+  color: rgb(64, 75, 75);
+  align-items: center;
+  justify-content: center;
+  padding: 5px 0;
+  transition: all 0.5s;
+  border-radius: 5px;
+}
+.note-finger-buttons div:hover,
+.note-finger-buttons-active{
+  user-select: none;
+  background-color: rgb(250, 200, 200) !important;
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 0;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: rgb(30, 31, 32);
+  transition: all 0.5s ease-in-out;
+}
+#showNote{
+  color: rgb(132, 0, 255);
+}
+.chord-name h3{
+  user-select: none;
+}
+section.how-to{
+  /* margin: 0 0 507px !important; */
+  background-color: red;
+  padding: 0 0 80px;
+}
+footer{
+  background-color: yellow;
+  padding: 90px;
+  margin: 0 0 64px;
+}

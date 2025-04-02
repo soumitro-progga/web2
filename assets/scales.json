@@ -1,0 +1,22 @@
+{
+  "C Major": [
+    "E2 F# first-fret",
+    "E2 G third-fret",
+    "A2 F# second-fret",
+    "A2 C third-fret-NOTE",
+    "D3 E second-fret",
+    "G3 A second-fret",
+    "B3 C first-fret-NOTE",
+    "G3.mp3"
+  ],
+  "C# Major": [
+    "E2 F# first-fret",
+    "E2 G third-fret",
+    "E2 F# second-fret",
+    "A2 C third-fret-NOTE",
+    "D3 E second-fret",
+    "G3 A second-fret",
+    "B3 C first-fret-NOTE",
+    "A3.mp3"
+  ]
+}
