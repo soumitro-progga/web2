@@ -6,6 +6,7 @@ self.addEventListener('install', event => {
               '/index.html',
               '/styles.css',
               '/script.js',
+              '/offline.html',
               '/manifest.json'
           ]);
       })
